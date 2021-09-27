@@ -7,7 +7,7 @@ const {
 router.get('/', (req, res) => {
     // Access our user model and run find.All() method
     // MySQL equivalent to -> SELECT * FROM users;
-    User.findAll({attributes: { exclude: ['password']}})
+    User.findAll()
         .then(dbUserData => res.json(dbUserData))
         .catch(err => {
             console.log(err);
@@ -19,7 +19,6 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     // MySQL equivalent -> SELECT * FROM users WHERE id = 1;
     User.findOne({
-            attributes: { exclude: ['password'] },
             where: {
                 id: req.params.id
             }
@@ -62,6 +61,7 @@ router.put('/:id', (req, res) => {
     // if req.body has exact key/value pairs to match thUser.update(req.body, {e model, you can just use `req.body` instead.
 
     User.update(req.body, {
+            individualHooks: true,
             where: {
                 id: req.params.id
             }
