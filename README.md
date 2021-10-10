@@ -5,6 +5,7 @@
 In this module, I built the back end for my first completely full-stack application. Just Tech News—a tech news is a website where users can post, upvote, and comment on links to news articles. I used used Sequelize, an object-relational mapping (ORM) library, to simplify my MySQL queries, add password hashing so that users can create secure passwords, and connected my application to JawsDB, a MySQL add-on for Heroku.
 
 ![ Just-Tech-News Images](assets/images/just-tech-profile.png)
+![ Just-Tech-News Images#2](assets/images/just-tech-profile2.png)
 
 # Pre-requisites
 
